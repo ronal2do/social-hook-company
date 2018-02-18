@@ -1,0 +1,18 @@
+{
+  "presets": ["es2015"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "cwd": "babelrc",
+        "root": ["./src"],
+        "extensions": [".js", ".ios.js", ".android.js"]
+      }
+    ],
+    "babel-plugin-inline-import-graphql-ast",
+    "transform-object-rest-spread",
+    "syntax-optional-chaining",
+    "transform-class-properties",
+    "transform-function-bind"
+  ]
+}

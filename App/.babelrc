@@ -1,0 +1,15 @@
+{
+  "presets": ["react-native"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "cwd": "babelrc",
+        "root": ["./src"],
+        "extensions": [".js", ".ios.js", ".android.js"]
+      }
+    ],
+    "babel-plugin-inline-import-graphql-ast",
+    "jsx-control-statements"
+  ]
+}

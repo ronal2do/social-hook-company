@@ -1,0 +1,48 @@
+input ProductFilter @filter {
+  id: Any
+  name: Any
+  category: Any
+  category1: Any
+  createdAt: Any
+  updatedAt: Any
+}
+
+input NewProductData {
+  name: String!
+  category: String!
+  category1: String!
+}
+
+input EditProductData {
+  name: String
+  category: String
+  category1: String
+}
+
+input ProductUpdateData {
+  set: EditProductData
+  push: [Any!]
+  pull: [Any!]
+}
+
+type ProductQuery @query {
+  products(filter: ProductFilter, sort: Any, limit: Int, skip: Int): [Product] @find
+  product(filter: ProductFilter): Product @get
+}
+
+type ProductMutation @mutation {
+  createProduct(data: NewProductData!): Product @create
+  createProducts(data: [NewProductData!]!, sort: Any): [Product] @create
+  updateProduct(filter: ProductFilter!, data: ProductUpdateData!): Product @update
+  updateProducts(filter: ProductFilter!, data: ProductUpdateData!, sort: Any): [Product] @update
+  patchProduct(filter: ProductFilter!, data: EditProductData!): Product @patch
+  patchProducts(filter: ProductFilter!, data: EditProductData!, sort: Any): [Product] @patch
+  removeProduct(filter: ProductFilter!): Product @remove
+  removeProducts(filter: ProductFilter!, sort: Any): [Product] @remove
+}
+
+type ProductSubscription @subscription {
+  createProduct: [Product] @create
+  updateProduct: [Product] @update
+  removeProduct: [Product] @remove
+}

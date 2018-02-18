@@ -1,0 +1,45 @@
+input CategoryFilter @filter {
+  id: Any
+  name: Any
+  user: Any
+  createdAt: Any
+  updatedAt: Any
+}
+
+input NewCategoryData {
+  name: String!
+  user: String!
+}
+
+input EditCategoryData {
+  name: String
+  user: String
+}
+
+input CategoryUpdateData {
+  set: EditCategoryData
+  push: [Any!]
+  pull: [Any!]
+}
+
+type CategoryQuery @query {
+  categories(filter: CategoryFilter, sort: Any, limit: Int, skip: Int): [Category] @find
+  category(filter: CategoryFilter): Category @get
+}
+
+type CategoryMutation @mutation {
+  createCategory(data: NewCategoryData!): Category @create
+  createCategories(data: [NewCategoryData!]!, sort: Any): [Category] @create
+  updateCategory(filter: CategoryFilter!, data: CategoryUpdateData!): Category @update
+  updateCategories(filter: CategoryFilter!, data: CategoryUpdateData!, sort: Any): [Category] @update
+  patchCategory(filter: CategoryFilter!, data: EditCategoryData!): Category @patch
+  patchCategories(filter: CategoryFilter!, data: EditCategoryData!, sort: Any): [Category] @patch
+  removeCategory(filter: CategoryFilter!): Category @remove
+  removeCategories(filter: CategoryFilter!, sort: Any): [Category] @remove
+}
+
+type CategorySubscription @subscription {
+  createCategory: [Category] @create
+  updateCategory: [Category] @update
+  removeCategory: [Category] @remove
+}

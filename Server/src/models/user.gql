@@ -1,0 +1,25 @@
+type User @model {
+  id: ID!
+  name: String!
+  birth: Date!
+  tags: [String]
+  createdAt: Date @default(value: "Date.now")
+  updatedAt: Date @default(value: "Date.now")
+}
+
+############ TEST ############
+# enum Foo {
+#   RED
+#   GREEN
+#   BLUE
+# }
+
+# type Category @model {
+#   id: String @unique
+#   name: String!
+#   foo: Foo!
+#   user: User @relation
+#   users: [User] @relation
+#   createdAt: Date @default(value: "asdasd")
+#   updatedAt: [Date]!
+# }

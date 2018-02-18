@@ -1,0 +1,7 @@
+type Category @model {
+  id: ID!
+  name: String!
+  user: User! @relation
+  createdAt: Date! @default(value: "Date.now")
+  updatedAt: Date! @default(value: "Date.now")
+}

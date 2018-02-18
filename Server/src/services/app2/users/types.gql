@@ -1,0 +1,42 @@
+input UserFilter @filter {
+  id: Any
+  name: Any
+  createdAt: Any
+  updatedAt: Any
+}
+
+input NewUserData {
+  name: String!
+}
+
+input EditUserData {
+  name: String
+}
+
+input UserUpdateData {
+  set: EditUserData
+  push: [Any!]
+  pull: [Any!]
+}
+
+type UserQuery @query {
+  users(filter: UserFilter, sort: Any, limit: Int, skip: Int): [User] @find
+  user(filter: UserFilter): User @get
+}
+
+type UserMutation @mutation {
+  createUser(data: NewUserData!): User @create
+  createUsers(data: [NewUserData!]!, sort: Any): [User] @create
+  updateUser(filter: UserFilter!, data: UserUpdateData!): User @update
+  updateUsers(filter: UserFilter!, data: UserUpdateData!, sort: Any): [User] @update
+  patchUser(filter: UserFilter!, data: EditUserData!): User @patch
+  patchUsers(filter: UserFilter!, data: EditUserData!, sort: Any): [User] @patch
+  removeUser(filter: UserFilter!): User @remove
+  removeUsers(filter: UserFilter!, sort: Any): [User] @remove
+}
+
+type UserSubscription @subscription {
+  createUser: [User] @create
+  updateUser: [User] @update
+  removeUser: [User] @remove
+}
