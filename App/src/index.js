@@ -10,9 +10,9 @@ import { store, persistor } from 'config/redux';
 import client from 'config/apollo';
 import Navigator from 'config/navigation';
 
-import { AsyncStorage, View, Text } from 'react-native';
+import { AsyncStorage } from 'react-native';
 
-// AsyncStorage.clear();
+AsyncStorage.clear();
 
 const App = () => (
   <Provider store={store}>

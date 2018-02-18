@@ -10,7 +10,7 @@ import styles from './styles';
 
 const Details = () => (
   <Page>
-    <Header title='HOME.TITLE' />
+    <Header title='FeedDetails' />
     <Content style={styles.content}>
       <Text upper bold phrase='HOME.INCREMENT' />
     </Content>

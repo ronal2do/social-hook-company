@@ -3,20 +3,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Presentational
-import { Page, Text, Header, Content } from 'components';
+import { Page, Text, Content, Button } from 'components';
 
 // Assets
 import styles from './styles';
 
-const Register = () => (
+const Register = ({ navigateTo }) => (
   <Page>
-    <Header title='HOME.TITLE' />
     <Content style={styles.content}>
-      <Text upper bold phrase='HOME.INCREMENT' />
+      <Button onPress={() => navigateTo('FeedList')}>
+        <Text upper phrase='REGISTER.SAVE' />
+      </Button>
     </Content>
   </Page>
 );
 
-Register.propTypes = {};
+Register.propTypes = {
+  navigateTo: PropTypes.func.isRequired
+};
 
 export default Register;
