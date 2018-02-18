@@ -1,34 +1,19 @@
 import { StyleSheet } from 'react-native';
-import { metrics, colors, fonts } from 'assets/styles';
+import { metrics, colors, general } from 'assets/styles';
 
 export default StyleSheet.create({
   content: {
-    alignItems: 'center'
+    flex: 1,
+    backgroundColor: colors.primary.base
   },
 
-  image: {
-    height: 80,
-    width: 80,
-    marginTop: metrics.hugeMeasure
+  title: {
+    color: colors.white,
+    fontSize: 65,
+    fontWeight: 'bold'
   },
 
-  welcome: {
-    fontSize: fonts.big,
-    margin: metrics.smallMeasure
-  },
+  textField: { ...general.textField },
 
-  instructions: {
-    color: colors.text.dark,
-    marginBottom: metrics.tinyMeasure
-  },
-
-  counter: {
-    margin: metrics.largeMeasure,
-    color: colors.text.dark,
-    fontSize: fonts.big
-  },
-
-  button: {
-    marginBottom: metrics.smallMeasure
-  }
+  button: { ...general.button }
 });

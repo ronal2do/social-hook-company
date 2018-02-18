@@ -9,6 +9,7 @@ export default {
   },
 
   REGISTER: {
+    TITLE: 'Register',
     SAVE: 'Save'
   },
 
@@ -36,13 +37,27 @@ export default {
       LABEL: 'Password',
       PLACEHOLDER: 'Enter the password...'
     },
+    NAME: {
+      LABEL: 'Name',
+      PLACEHOLDER: 'Enter the name...'
+    },
+    GITHUB: {
+      LABEL: 'GitHub',
+      PLACEHOLDER: 'Enter the username...'
+    },
     VALIDATIONS: {
+      GITHUB: {
+        REQUIRED: 'GitHub is required.'
+      },
+      NAME: {
+        REQUIRED: 'Name is required.'
+      },
       EMAIL: {
-        REQUIRED: 'E-mail é requerido.',
-        FORMAT: 'Formato inválido. ex.: example@domain.'
+        REQUIRED: 'Email is required.',
+        FORMAT: 'Format invalid. ex.: example@domain.'
       },
       PASSWORD: {
-        REQUIRED: 'Senha é requerida.'
+        REQUIRED: 'Password is required.'
       }
     }
   }

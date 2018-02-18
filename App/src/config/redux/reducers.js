@@ -7,7 +7,7 @@ import { reducer as navReducer } from 'config/navigation';
 export default persistCombineReducers({
   key: 'root',
   storage,
-  blacklist: ['form', 'nav']
+  blacklist: ['form']
 }, {
   form: formReducer,
   nav: navReducer

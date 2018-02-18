@@ -2,5 +2,7 @@ import reducer from './ducks';
 import connect from './connect';
 import component from './Container';
 
-export { reducer };
+const featureName = 'Register';
+
+export { reducer, featureName };
 export default connect(component);
