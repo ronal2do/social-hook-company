@@ -4,7 +4,8 @@ export default {
 
   LOGIN: {
     LOGIN: 'Login',
-    REGISTER: 'No account yet? Register'
+    NO_ACCOUNT: 'No account yet? ',
+    REGISTER: 'Register'
   },
 
   REGISTER: {
@@ -27,8 +28,14 @@ export default {
 
   FORM: {
     TITLE: 'Formulário',
-    EMAIL: 'E-mail',
-    PASSWORD: 'Senha',
+    EMAIL: {
+      LABEL: 'Email',
+      PLACEHOLDER: 'Enter the email...'
+    },
+    PASSWORD: {
+      LABEL: 'Password',
+      PLACEHOLDER: 'Enter the password...'
+    },
     VALIDATIONS: {
       EMAIL: {
         REQUIRED: 'E-mail é requerido.',
@@ -37,7 +44,6 @@ export default {
       PASSWORD: {
         REQUIRED: 'Senha é requerida.'
       }
-    },
-    VALIDATE: 'Validar'
+    }
   }
 };

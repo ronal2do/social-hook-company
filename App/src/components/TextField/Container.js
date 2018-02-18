@@ -16,6 +16,7 @@ const TextFieldComponent = ({
   password,
   light,
   label,
+  placeholder,
   input: { onChange },
   meta: { touched, error },
   ...custom
@@ -33,6 +34,7 @@ const TextFieldComponent = ({
     <TextInput
       onChange={onChange}
       secureTextEntry={password}
+      placeholder={t(placeholder)}
       style={StyleSheet.flatten([
         styles.input,
         light && styles.lightInput,
@@ -62,6 +64,7 @@ TextFieldComponent.propTypes = {
   password: PropTypes.bool.isRequired,
   light: PropTypes.bool.isRequired,
   label: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   input: PropTypes.shape({
     onChange: PropTypes.func.isRequired
   }).isRequired,
@@ -69,6 +72,10 @@ TextFieldComponent.propTypes = {
     touched: PropTypes.bool.isRequired,
     error: PropTypes.string
   }).isRequired
+};
+
+TextFieldComponent.defaultProps = {
+  placeholder: ''
 };
 
 TextField.propTypes = {
